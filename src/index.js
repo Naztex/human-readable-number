@@ -9,12 +9,12 @@ module.exports = function toReadable (number) {
     if (number === 0) {
         return 'zero';
     }
-    //the case of 10, 11, 12 ,13, .... 19 
+    //value < 20
     if (number < 20) {
         result = ones[number];
         return result;
     }
-    // 20 - 99
+    //value 20 - 99
     if (numString.length === 2) {
         result += tens[parseInt(numString.charAt(0))];
         if (numString[1] !== '0') {
@@ -22,7 +22,7 @@ module.exports = function toReadable (number) {
         }
         return result;
     }
-    //100 and more
+    //value 100 and more
     if (numString.length === 3) {
         result = ones[parseInt(numString.charAt(0))] + hundred;
         if (numString[1] === '0' && numString[2] === '0') {
